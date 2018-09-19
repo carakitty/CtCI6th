@@ -11,7 +11,7 @@
 
 using namespace std;
 
-string urlify(string str, int trueLength) {
+void urlify(string &str, int trueLength) {
     int count = 0; // count the number of space in str
     int i = 0, j = 0;
     for (i = 0; i < trueLength; i++) {
@@ -29,14 +29,13 @@ string urlify(string str, int trueLength) {
         }
     }
     
-    return str;
 }
 
 int main() {
     string str = "Mr John Smith    ";
     int len = 13;
     cout << "Actual string is: " << str << endl;
-    str = urlify(str, len);
+    urlify(str, len);
     cout << "urlified string is: " << str << endl;
     return 0;
 }
