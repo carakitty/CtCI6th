@@ -36,6 +36,6 @@ bool isPalindromePermutation_sort(string str) {
 int main() {
     string str = "tacct ooa";
     cout << "Is string \"" << str << "\" palindrome permutation? " << boolalpha
-    << (isPalindromePermutation_sort(str)) << endl;
+         << (isPalindromePermutation_sort(str)) << endl;
     return 0;
 }
