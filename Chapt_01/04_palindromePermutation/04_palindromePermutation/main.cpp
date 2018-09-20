@@ -33,9 +33,49 @@ bool isPalindromePermutation_sort(string str) {
     return true;
 }
 
+// method 2: hash
+// use a hash table to count the number of each char
+// use another loop to count the number of odd count
+bool isPalindromePermutation_hash(string str) {
+    int count[26] = {0};
+    for (int i = 0; i < str.length(); i++) {
+        int val = -1;
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            val = str[i] - 'a';
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
+            val = str[i] - 'A';
+        }
+        if (val > -1) {
+            count[val]++;
+        }
+    }
+    
+    int odd_count = 0;
+    for (auto c : count) {
+        if (c % 2 != 0) {
+            odd_count++;
+        }
+        if (odd_count > 1) return false;
+    }
+    
+    return true;
+}
+
 int main() {
-    string str = "tacct ooa";
+    string str = "ab";
+    cout << "Method 1: sort" << endl;
     cout << "Is string \"" << str << "\" palindrome permutation? " << boolalpha
          << (isPalindromePermutation_sort(str)) << endl;
+    
+    cout << "Method 2: hash" << endl;
+    cout << "Is string \"" << str << "\" palindrome permutation? " << boolalpha
+         << (isPalindromePermutation_hash(str)) << endl;
     return 0;
 }
+
+
+
+
+
+
+
