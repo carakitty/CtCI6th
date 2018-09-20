@@ -1,7 +1,7 @@
 //
 //  main.cpp
 //  04_palindromePermutation
-//  Given a string, write a function to check if it is a permutation of a palindrome. A
+//  Given a string, write a function to check if it is a permutation of a palindrome.
 //
 //  Created by carakitty on 9/19/18.
 //  Copyright © 2018 carakitty. All rights reserved.
@@ -12,6 +12,7 @@
 using namespace std;
 
 // two method: sort and hash
+// ignore all non-letter characters
 
 // method 1: sort
 bool isPalindromePermutation_sort(string str) {
